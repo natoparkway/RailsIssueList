@@ -12,6 +12,9 @@ var ShortIssue = React.createClass({
 			<li className="short-issue">
 				<IssueHeader issue={issue}/>
 				<IssueSummary text={issue.body} displayFullText={false}/>
+				<div className="issues-list-text small-text"> 
+					Issue #{issue.number} opened by {issue.user.login}
+				</div>
 			</li>
 		);
 	}
