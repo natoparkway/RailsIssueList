@@ -10,7 +10,7 @@ IssueHeader = React.createClass({
 			<div className="issue-header"> 
 				<img className="user-avatar" src={user.avatar_url}/>
 				<span className="issue-info-container">
-					<span className="issues-list-text issue-title-text"> {issue.title} </span>
+					<span className="issue-title-text"> {issue.title} </span>
 					<IssueLabels labels={issue.labels}/>
 				</span>
 				

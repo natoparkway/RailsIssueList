@@ -5,6 +5,9 @@ var IssueSummary = React.createClass({
 	_abridgeText: function(text) {
 		var abridgedText = '';
 		var charCount = 0;
+		if(!text) return "Summary Omitted";
+		if(text.length <= AppConstants.ISSUE_SUMMARY_CH_LIMIT) return text;
+		
 		text.split(' ').forEach(function(word) {
 			if(charCount > AppConstants.ISSUE_SUMMARY_CH_LIMIT) return;
 			charCount += word.length + 1;
@@ -22,7 +25,7 @@ var IssueSummary = React.createClass({
 
 		return (
 			<div>
-				<p className="issues-list-text"> {text} </p>
+				<p className="issueSummary"> {text} </p>
 			</div>
 		);
 	},

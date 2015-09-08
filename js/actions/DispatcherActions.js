@@ -6,6 +6,15 @@ var DispatcherActions = {
 		AppDispatcher.dispatch({
 			actionType: ActionConstants.GET_ISSUES,
 			pageNumber: pageNumber
-		})
+		});
+	},
+
+	getIssueComments: function(issueNumber) {
+		AppDispatcher.dispatch({
+			actionType: ActionConstants.GET_ISSUE_COMMENTS,
+			issueNumber: issueNumber
+		});
 	}
-}
+};
+
+module.exports = DispatcherActions;
