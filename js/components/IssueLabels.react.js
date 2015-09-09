@@ -2,6 +2,7 @@ var React = require('react');
 
 var IssueLabels = React.createClass({
 	render: function() {
+		
 		var labels = this.props.labels.map(function(label, index) {
 			var spanStyle = {backgroundColor: "#" + label.color};
 			return (

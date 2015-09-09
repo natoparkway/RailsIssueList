@@ -23,10 +23,13 @@ var ShortIssue = React.createClass({
 	},
 
 	_handleClick: function() {
+		console.log('short issue clicked');
 		DispatcherActions.getIssueComments(this.props.issue.number);
 	},
 
 	componentDidMount: function() {
+		console.log('short issue mounted');
+		console.log(this.context.toString());
 		CommentsStore.addClickListener(this.props.issue.number, this._onChange);
 	},
 

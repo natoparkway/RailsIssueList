@@ -1,22 +1,64 @@
-/*ISSUE HEADER STYLING*/
-.user-avatar {
-	height: 30px;
-	width: 30px;
-	float: left;
+/*Whole document styling*/
+a {
+	text-decoration: none;
 }
 
+body {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    background-color: #F5FCFF;
+}
+
+li {
+	padding-top: 0px;
+	padding-bottom: 6px;
+	background-color: #eaeaea;
+    margin-bottom: 4px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+ul {
+	list-style-type: none;
+	width: 80%;
+	display: inline-block;
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+}
+
+ul div {
+	padding-left: 5px;
+}
+
+.page-number {
+	font-size: 24px;
+}
+
+
+.small-text {
+	font-size: 10px;
+}
+
+#rails-issues-app {
+	text-align: center;
+}
+
+#title {
+	text-align: center;
+	font-size: 30px;
+	margin-top: 4px;
+
+}
+
+
+/*Github Issues List*/
 .issue-header { /* div holding the header of an issue */
 	width: 100%;
 	height: 30px;
 	padding-left: 0px;	/* Overwrite ul div styling */
 	vertical-align: middle;
 	background-color: #fababa;
-}
-
-.issue-title-text {
-	font-weight: bold;
-	clear: left;
-	margin-left: 3px;
 }
 
 .issue-info-container {
@@ -26,6 +68,16 @@
     height: inherit;
 }
 
+.issue-title-text {
+	font-weight: bold;
+	clear: left;
+	margin-left: 3px;
+}
+
+
+.issue-summary {
+	margin-top: 4px;
+}
 
 .label {
 	margin-left: 3px;
@@ -44,68 +96,33 @@
 	float:right;
 	vertical-align: middle;
 }
-/*ISSUE HEADER STYLING END*/
 
-.small-text {
-	font-size: 10px;
+.user-avatar {
+	height: 30px;
+	width: 30px;
+	float: left;
 }
 
-.issueSummary {
-	margin-top: 4px;
-}
-
-
-body {
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    background-color: #F5FCFF;
-}
-
-/* list item hover - will also change color of children on hover*/
-.short-issue:hover, .short-issue:hover .issue-header {
+.short-issue:hover, .short-issue:hover .issue-header { /* list item hover - will also change color of children on hover*/
 	background: #aaa;
   	cursor: pointer;
 }
 
 
-#title {
-	text-align: center;
-	font-size: 30px;
-	margin-top: 4px;
-
-}
-
-#rails-issues-app {
-	text-align: center;
-}
-
-ul {
-	list-style-type: none;
-	width: 80%;
-	display: inline-block;
-	text-align: left;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 0px;
-}
-
-ul div {
-	padding-left: 5px;
-}
-
-li {
-	padding-top: 0px;
-	padding-bottom: 6px;
-	background-color: #eaeaea;
-    margin-bottom: 4px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.page-number {
+/*Detailed Issue View*/
+.issue-state {
 	font-size: 24px;
+	color: #fff;
+    text-align: center;
+    padding: 2px;
 }
+
 
 /*BUTTONS*/
+.back-btn {
+	float: center;
+}
+
 .btn {
 	font-size: 150%;
     font-weight: 700;
@@ -113,6 +130,7 @@ li {
     color: #fff;
     padding: 5px;
     border-radius: 5px;
+    background-color: #fb0491;
 }
 
 .btn:hover {
@@ -127,20 +145,15 @@ li {
 	display: inline-block;
 }
 
-.prev-btn {
-	background-color: #fb0491;
-	float: left;
+.back-btn-container {
+	width: 100%;
+	text-align: center;
 }
 
 .next-btn {
-	background-color: #fb0491;
 	float: right;
 }
 
-/*Detailed Issue View*/
-.issue-state {
-	font-size: 24px;
-	color: #fff;
-    text-align: center;
-    padding: 2px;
+.prev-btn {
+	float: left;
 }

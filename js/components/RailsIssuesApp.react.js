@@ -5,8 +5,10 @@ var GithubAPIMethods = require('../utils/GithubAPIMethods');
 var IssuesStore = require('../stores/IssuesStore');
 var DispatcherActions = require('../actions/DispatcherActions');
 
+
 var RailIssuesApp = React.createClass({
 	getInitialState: function() {
+		console.log('getting initial state');
 		return {
 			pageNumber: 1,
 			issues: []
@@ -14,7 +16,9 @@ var RailIssuesApp = React.createClass({
 	},
 
 	render: function() {
+		console.log('rendering RailIssuesApp');
 		return (
+
 			<div>
 				<PrevNextButtons pageNumber={this.state.pageNumber}/>
 				<IssuesList issues={this.state.issues}/>
@@ -25,6 +29,7 @@ var RailIssuesApp = React.createClass({
 	},
 
 	componentDidMount:function() {
+		console.log('componentDidMount');
 		IssuesStore.addChangeListener(this._onChange);
 		DispatcherActions.getIssuesPage(1);
 	},

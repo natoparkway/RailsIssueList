@@ -25,7 +25,7 @@ var IssueSummary = React.createClass({
 
 		return (
 			<div>
-				<p className="issueSummary"> {text} </p>
+				<p className="issue-summary"> {text} </p>
 			</div>
 		);
 	},
