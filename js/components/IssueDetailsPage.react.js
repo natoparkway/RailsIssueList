@@ -26,10 +26,6 @@ var IssueDetailsPage = React.createClass({
 			</ul>
 		);
 	},
-
-	componentWillUnmount: function() {
-		console.log('unmounting');
-	}
 });
 
 module.exports = IssueDetailsPage;

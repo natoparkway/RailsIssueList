@@ -8,30 +8,25 @@ var DispatcherActions = require('../actions/DispatcherActions');
 
 var RailIssuesApp = React.createClass({
 	getInitialState: function() {
-		console.log('getting initial state');
 		return {
-			pageNumber: 1,
 			issues: []
 		}
 	},
 
 	render: function() {
-		console.log('rendering RailIssuesApp');
 		return (
-
 			<div>
-				<PrevNextButtons pageNumber={this.state.pageNumber}/>
+				<PrevNextButtons pageNumber={IssuesStore.getCurrentPageNumber()}/>
 				<IssuesList issues={this.state.issues}/>
-				<PrevNextButtons pageNumber={this.state.pageNumber}/>
+				<PrevNextButtons pageNumber={IssuesStore.getCurrentPageNumber()}/>
 			</div>
 
 		);
 	},
 
 	componentDidMount:function() {
-		console.log('componentDidMount');
 		IssuesStore.addChangeListener(this._onChange);
-		DispatcherActions.getIssuesPage(1);
+		DispatcherActions.getCurrIssuesPage();
 	},
 
 	componentWillUnmount: function() {
@@ -39,11 +34,8 @@ var RailIssuesApp = React.createClass({
 	},
 
 	_onChange: function() {
-		var newPageNumber = IssuesStore.getCurrentPageNumber();
-		var newIssues = IssuesStore.getIssues();
 		this.setState({
-			pageNumber: newPageNumber,
-			issues: newIssues
+			issues: IssuesStore.getIssues()
 		});
 		
 	}

@@ -13,11 +13,11 @@ var PrevNextButtons = React.createClass({
 	},
 
 	_prevClicked: function() {
-		DispatcherActions.getIssuesPage(this.props.pageNumber - 1);
+		DispatcherActions.getPrevIssuesPage();
 	},
 
 	_nextClicked: function() {
-		DispatcherActions.getIssuesPage(this.props.pageNumber + 1);
+		DispatcherActions.getNextIssuesPage();
 	}
 });
 

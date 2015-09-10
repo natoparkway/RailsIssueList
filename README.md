@@ -1,7 +1,31 @@
-# RailsIssueList
+#RailsIssueList
 
-Known Issues:
-	Headers that are longer than two lines over flow
-	No links, so back button doesn't work
-	No caching
-	Need a better way to inform users that there are no more users
+###How to run:
+	Navigate to root directory
+	run 'http-server' (if you don't have http-server module installed, you can use python to start one or npm install http-server)
+
+###Tests:
+	Unfortunately I did not have enough time to implement tests.
+
+###Features:
+	Default page
+		Displays a list of 25 issues at a time
+		Allows the user to navigate between pages
+		Each issue displays
+			Issue number and title
+			Labels
+			Reporter's username and gravatar
+			The first 140 characters of the summary, ending on a clean word
+	Issue Details Page
+		Clicking on an individualized issue on the default page takes you to a issue details page
+		The detailed issue displays
+			Issue state and title
+			Labels
+			Reporter's username and gravatar
+			The complete issue summary
+		The page also displays any comments on that issue
+
+###Places for improvement:
+	No routin mechanism, so back button does not work and state is not saved on refresh
+	IssuesStore does not cache and must make a GET request everytime the user changes the page
+	

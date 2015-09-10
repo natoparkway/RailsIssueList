@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher.js');
 var ActionConstants = require('../constants/ActionConstants.js');
 var AppConstants = require('../constants/AppConstants.js');
+var CommentsStore = require('./CommentsStore');
 var EventEmitter = require('events').EventEmitter;
 var GithubAPIMethods = require('../utils/GithubAPIMethods');
 var _ = require('underscore');
@@ -46,14 +47,16 @@ var IssuesStore = _.extend({}, EventEmitter.prototype, {
 	}
 });
 
-AppDispatcher.register(function(action) {
+IssuesStore.dispatchToken = AppDispatcher.register(function(action) {
 	switch(action.actionType) {
 		case ActionConstants.GET_ISSUES:
-			if(action.pageNumber === 0) return; //there are no pages below this
-			_pageNumber = action.pageNumber;
-			IssuesStore.loadPage(_pageNumber, function() {
-				IssuesStore.emitChange();
-			});
+			//No op, stay on page
+			break;
+		case ActionConstants.GET_NEXT_ISSUES:
+			_pageNumber += 1;
+			break;
+		case ActionConstants.GET_PREV_ISSUES:
+			_pageNumber -= 1;
 			break;
 
 
@@ -61,7 +64,14 @@ AppDispatcher.register(function(action) {
 			//no op
 	}
 
+	if(_pageNumber === 0) {
+		_pageNumber = 1;
+		return; //there are no pages below this
+	}
 
+	IssuesStore.loadPage(_pageNumber, function() {
+		IssuesStore.emitChange();
+	});
 
 });
 
