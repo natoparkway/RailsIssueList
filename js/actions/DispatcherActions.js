@@ -28,7 +28,7 @@ var DispatcherActions = {
 		});
 	},
 
-	backToIssues: function() {
+	backToIssues: function() {	//Notifies listener that the user wants to navigate back to the issues page
 		AppDispatcher.dispatch({
 			actionType: ActionConstants.GO_BACK_TO_ISSUES
 		});

@@ -8,7 +8,6 @@ var IssueDetailsPage = React.createClass({
 	render: function() {
 		var issue = this.props.issue;
 		var comments = CommentsStore.getIssueComments(issue.number);
-		
 
 		if(comments) {
 			comments = comments.map(function(comment, index) {

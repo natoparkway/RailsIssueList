@@ -64,7 +64,7 @@ IssuesStore.dispatchToken = AppDispatcher.register(function(action) {
 			//no op
 	}
 
-	if(_pageNumber === 0) {
+	if(_pageNumber === 0) {		//TODO: Send message to user that there is no page 0
 		_pageNumber = 1;
 		return; //there are no pages below this
 	}

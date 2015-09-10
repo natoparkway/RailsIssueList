@@ -3,6 +3,7 @@
 ###How to run:
 	Navigate to root directory
 	run 'http-server' (if you don't have http-server module installed, you can use python to start one or npm install http-server)
+	Navigate to localhost:8080 (or whichever port you specified)
 
 ###Tests:
 	Unfortunately I did not have enough time to implement tests.
@@ -26,6 +27,7 @@
 		The page also displays any comments on that issue
 
 ###Places for improvement:
-	No routin mechanism, so back button does not work and state is not saved on refresh
+	No routing mechanism, so back button does not work and state is not saved on refresh
 	IssuesStore does not cache and must make a GET request everytime the user changes the page
+	@-notation refrences to GitHub users do not link to profiles.
 	

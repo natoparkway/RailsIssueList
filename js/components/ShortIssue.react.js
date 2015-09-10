@@ -4,7 +4,6 @@ var IssueReporterInfo = require('./IssueReporterInfo.react');
 var IssueSummary = require('./IssueSummary.react');
 var IssueHeader = require('./IssueHeader.react');
 var DispatcherActions = require('../actions/DispatcherActions');
-var CommentsStore = require('../stores/CommentsStore');
 var IssueDetailsPage = require('./IssueDetailsPage.react');
 
 var ShortIssue = React.createClass({
